@@ -1,0 +1,14 @@
+spring:
+  # 数据源
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://192.168.3.64:13306/smarthome?useUnicode=true&characterEncoding=utf8&serverTimezone=Asia/Shanghai
+    username: root
+    password: ds23581321DS.
+    hikari: #连接池配置
+      connection-timeout: 30000 #30秒
+      minimum-idle: 5 #最小连接
+      auto-commit: true #自动提交
+      idle-timeout: 600000 #每个连接的最打连接时长
+      pool-name: DatebookHikariCP #连接池名称
+      max-lifetime: 28740000 #一个连接的生命时长（毫秒），超时而且没被使用则被释放（retired），默认:30分钟 1800000ms，建议设置比数据库超时时长少60秒
